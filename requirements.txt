@@ -1,0 +1,10 @@
+matplotlib
+numpy
+torch
+torchmetrics
+torchvision
+opencv-python
+scikit-learn==1.5.1
+streamlit
+
+
