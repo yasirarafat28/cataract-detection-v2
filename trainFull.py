@@ -3,6 +3,7 @@ import os
 from PIL import Image, ImageDraw
 from torch.utils.data import Dataset, DataLoader
 from torchvision import transforms,models
+import cv2
 
 
 import torch
@@ -78,6 +79,7 @@ class CataractDataset(Dataset):
 
         if self.transform:
             image = self.transform(image)
+            
         
         return image, label, cataract_presence_idx, color_of_lens_idx, cataract_location_idx, pupil_visibility_idx
 
@@ -87,13 +89,13 @@ data_transforms = {
         transforms.RandomResizedCrop(224),
         transforms.RandomHorizontalFlip(),
         transforms.ToTensor(),
-        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        # transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ]),
     'val': transforms.Compose([
         transforms.Resize(256),
         transforms.CenterCrop(224),
         transforms.ToTensor(),
-        transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
+        # transforms.Normalize([0.485, 0.456, 0.406], [0.229, 0.224, 0.225])
     ]),
 }
 
@@ -105,7 +107,8 @@ val_data = {k: v for i, (k, v) in enumerate(annotations.items()) if i % 5 == 0}
 
 
 # Define the dataset and dataloaders
-root_dir = 'images'
+# root_dir = 'images'
+root_dir = 'bulk-image-crop'
 # dataset = CataractDataset(annotations, root_dir, transform=data_transforms['train'])
 # train_size = int(0.8 * len(dataset))
 # val_size = len(dataset) - train_size

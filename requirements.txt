@@ -6,5 +6,9 @@ torchvision
 opencv-python
 scikit-learn==1.5.1
 streamlit
+dlib
+mtcnn
+tensorflow==2.17.0
+
 
 
