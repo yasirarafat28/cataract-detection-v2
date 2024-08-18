@@ -8,7 +8,7 @@ eye_cascade = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_eye.xml
 kernel = np.ones((3, 3), np.uint8)  # Kernel for morphology
 
 # Load the image
-frame = cv2.imread("dataset_copy/src-image/WhatsApp Image 2024-07-04 at 21.30.30.jpeg")
+frame = cv2.imread("dataset_copy/src-image/WhatsApp Image 2024-07-04 at 21.33.01.jpeg")
 gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
 
 # Detect eyes
