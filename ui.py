@@ -49,7 +49,7 @@ def preprocess_image(image_file,model_cataract,filename):
     
     img = Image.open(image_file).convert('RGB')
     
-    need_filter = True
+    need_filter = False
     if need_filter:
         img = np.array(img)
         eye_img = filter_eye(img)

@@ -121,7 +121,7 @@ optimizer = optim.Adam(model.parameters(), lr=0.001)
 device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
 model = model.to(device)
 
-num_epochs = 10
+num_epochs = 30
 for epoch in range(num_epochs):
     print(f'Epoch {epoch}/{num_epochs - 1}')
     print('-' * 10)
